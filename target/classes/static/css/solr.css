@@ -1,0 +1,20 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+#step2{
+  display: none;
+  text-align: left;
+}
+
+#step2 table tr td input[type='text']{
+  width: 960px;
+}
+
+#step4{
+  display: none;
+}

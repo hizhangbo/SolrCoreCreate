@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<dataConfig> 
+  <dataSource type="JdbcDataSource" driver="com.mysql.jdbc.Driver" url="jdbc:mysql://200.1.3.155:3306/shxh_sjfx" user="root" password="91test.com" batchSize="-1"/>  
+  <document> 
+    <entity name="spxx" pk="id" query="select id,spxxid,dj,spbh as isbn,pm,LENGTH(pm) as len,csm,zz,sdhrq,DATE_FORMAT(CBNY,'%Y%m') as CBNY,year(CBNY) as CBN,cbsid,bc from jt_j_spxx" deltaImportQuery="select id,spxxid,dj,spbh as isbn,pm,LENGTH(pm) as len,csm,zz,sdhrq,DATE_FORMAT(sp.CBNY,'%Y%m') as CBNY,year(sp.CBNY) as CBN,cbsid,bc from jt_j_spxx where id = '${dih.delta.id}'" deltaQuery="select id from jt_j_spxx where updatetime &gt; '${dih.last_index_time}'" transformer="RegexTransformer"> 
+      <!--<field column="ID"  name="id"/>-->  
+      <!--<field column="PM"  name="pm"/>-->  
+      <!--<field column="DJ"  name="dj"/>-->  
+      <!--<field column="ISBN"  name="isbn"/>-->  
+      <!--<field column="SPXXID"  name="spxxid"/>-->  
+      <!--<field column="LEN" name="len"/>-->  
+      <!--<field column="CSM" name="csm"/>-->  
+      <!--<field column="ZZ" name="zz"/>-->  
+      <!--<field column="SDHEQ" name="sdhrq"/>-->  
+      <!--<field column="CBNY" name="cbny"/>-->  
+      <!--<field column="CBN" name="cbn"/>-->  
+      <!--<field column="CBSID" name="cbsid"/>-->  
+      <!--<field column="BC" name="bc"/>-->  
+      <field column="ID" name="id"/>
+      <field column="SPXXID" name="spxxid"/>
+      <field column="DJ" name="dj"/>
+      <field column="ISBN" name="isbn"/>
+      <field column="PM" name="pm"/>
+      <field column="LEN" name="len"/>
+      <field column="CSM" name="csm"/>
+      <field column="ZZ" name="zz"/>
+      <field column="SDHRQ" name="sdhrq"/>
+      <field column="CBNY" name="cbny"/>
+      <field column="CBN" name="cbn"/>
+      <field column="CBSID" name="cbsid"/>
+      <field column="BC " name="bc "/>
+      <field column="" name=""/>
+    </entity> 
+  </document> 
+</dataConfig>

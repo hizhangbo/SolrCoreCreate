@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<config>
+    <command name="install_jdk">
+        <line id="1" value="java -version" />
+        <line id="2" value="cd /usr/local/;tar -zxvf ${jdk}" />
+    </command>
+
+    <command name="install_solr">
+        <line id="1" value="java -version" />
+        <line id="2" value="cd /usr/local/;tar -zxvf ${solr};" />
+        <line id="3" value="/usr/local/solrcloud/bin/startup.sh" />
+    </command>
+</config>
